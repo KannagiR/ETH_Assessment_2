@@ -33,7 +33,7 @@ export default function HomePage() {
 
   const connectAccount = async () => {
     if (!ethWallet) {
-      alert("MetaMask wallet is required to connect");
+      alert("MetaMask wallet is needed to be connected");
       return;
     }
 
@@ -99,7 +99,7 @@ export default function HomePage() {
       <div class="overlay">
         <p>Your Balance: {balance}</p>
         <p>Your Account: {account}</p>
-        <button onClick={deposit}>Deposit 1 ETH</button>
+        <button onClick={deposit}>Deposit 2 ETH</button>
         <button onClick={withdraw}>Withdraw 1 ETH</button>
       </div>
     );
@@ -113,31 +113,31 @@ export default function HomePage() {
     <main className="container">
       <header>
         <h1>𝔀𝓮𝓵𝓬𝓸𝓶𝓮</h1>
-        <p>Ԝ𝗁ɑ𝗍 ɣ𝗈υ ⍵ɑ𐓣𝗍 𝗍𝗈 ᑯ𝗈:</p>
+        <p>ԜHAT DO YOU WANT TO DO:</p>
       </header>
       {initUser()}
       <style jsx>
         {`
           .container {
             text-align: center;
-            background-color: black;
+            background-color: blue;
             background-size: cover;
             color: #fff;
-            font-family: "Arial", sans-serif;
+            font-family: "Times New Roman", Baskerville Old Face;
           }
 
           header {
-            padding: 30px;
+            padding: 35px;
           }
 
           h1 {
-            font-family: "Dancing Script", cursive;
+            font-family: "Arial", cursive;
             font-size: 80px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
           }
 
           p {
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 10px;
           }
 

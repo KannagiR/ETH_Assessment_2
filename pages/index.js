@@ -8,7 +8,7 @@ export default function HomePage() {
   const [atm, setATM] = useState(undefined);
   const [balance, setBalance] = useState(undefined);
 
-  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
   const atmABI = atm_abi.abi;
 
   const getWallet = async () => {
@@ -27,13 +27,13 @@ export default function HomePage() {
       console.log("Account connected: ", account);
       setAccount(account);
     } else {
-      console.log("No account like this is found");
+      console.log("No account found");
     }
   };
 
   const connectAccount = async () => {
     if (!ethWallet) {
-      alert("MetaMask wallet is mandatory required to connect");
+      alert("MetaMask wallet is required to connect");
       return;
     }
 
@@ -60,6 +60,7 @@ export default function HomePage() {
 
   const deposit = async () => {
     if (atm) {
+      // manually set the gas limit to 3*10^7
       let tx = await atm.deposit(1, { gasLimit: 3e7 });
       await tx.wait();
       getBalance();
@@ -68,6 +69,7 @@ export default function HomePage() {
 
   const withdraw = async () => {
     if (atm) {
+      // manually set the gas limit to 3*10^7
       let tx = await atm.withdraw(1, { gasLimit: 3e7 });
       await tx.wait();
       getBalance();
@@ -77,7 +79,7 @@ export default function HomePage() {
   const initUser = () => {
     // Check to see if user has Metamask
     if (!ethWallet) {
-      return <p>You need to install Metamask in order to use this ATM.</p>;
+      return <p>Please install Metamask in order to use this ATM.</p>;
     }
 
     // Check to see if user is connected. If not, connect to their account
@@ -110,18 +112,18 @@ export default function HomePage() {
   return (
     <main className="container">
       <header>
-        <h1>WELCOME</h1>
-        <p>what do you want from this atm:</p>
+        <h1>𝔀𝓮𝓵𝓬𝓸𝓶𝓮</h1>
+        <p>Ԝ𝗁ɑ𝗍 ɣ𝗈υ ⍵ɑ𐓣𝗍 𝗍𝗈 ᑯ𝗈:</p>
       </header>
       {initUser()}
       <style jsx>
         {`
           .container {
             text-align: center;
-            background-color: red;
+            background-color: black;
             background-size: cover;
             color: #fff;
-            font-family: "Times New Roman", serif;
+            font-family: "Arial", sans-serif;
           }
 
           header {
@@ -129,7 +131,7 @@ export default function HomePage() {
           }
 
           h1 {
-            font-family: "Times New Roman", serif;
+            font-family: "Dancing Script", cursive;
             font-size: 80px;
             margin-bottom: 30px;
           }
@@ -143,7 +145,7 @@ export default function HomePage() {
             background-color: #4caf50;
             color: #fff;
             border: none;
-            padding: 20px 30px;
+            padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
           }
@@ -156,3 +158,20 @@ export default function HomePage() {
     </main>
   );
 }
+// const deposit = async() => {
+//   if (atm) {
+//     // manually set the gas limit to 100,000
+//     let tx = await atm.deposit(1, {gasLimit: 3e7});
+//     await tx.wait()
+//     getBalance();
+//   }
+// };
+
+// const withdraw = async() => {
+//   if (atm) {
+//     // manually set the gas limit to 100,000
+//     let tx = await atm.withdraw(1, {gasLimit: 3e7});
+//     await tx.wait()
+//     getBalance();
+//   }
+// };

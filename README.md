@@ -27,9 +27,9 @@ This is a Solidity smart contract named `test`. It has the following features:
 
 - `getBalance()`: A view function that returns the current balance of the contract.
 
-- `deposit(uint256 _amount) payable`: A function that allows users to deposit a specified amount (`_amount`) to the contract. The `payable` modifier allows the function to receive Ether. It updates the `balance` variable, emits a `Deposit` event, and performs assertions to ensure the transaction is completed successfully.
+- `depositamount(uint256 _amount) payable`: A function that allows users to deposit a specified amount (`_amount`) to the contract. The `payable` modifier allows the function to receive Ether. It updates the `balance` variable, emits a `Deposit` event, and performs assertions to ensure the transaction is completed successfully.
 
-- `withdraw(uint256 _withdrawAmount)`: A function that allows users to withdraw a specified amount (`_withdrawAmount`) from the contract. It checks if the contract has sufficient balance and reverts if the balance is insufficient. It updates the `balance` variable, emits a `Withdraw` event, and performs assertions to ensure the transaction is completed successfully.
+- `withdrawamount(uint256 _withdrawAmount)`: A function that allows users to withdraw a specified amount (`_withdrawAmount`) from the contract. It checks if the contract has sufficient balance and reverts if the balance is insufficient. It updates the `balance` variable, emits a `Withdraw` event, and performs assertions to ensure the transaction is completed successfully.
 
 - `error InsufficientBalance(uint256 balance, uint256 withdrawAmount)`: A custom error that is used when a withdrawal amount exceeds the contract balance.
 
@@ -76,7 +76,7 @@ To run this application locally, follow these steps:
 
 ## Usage
 
-1. Connect Metamask Wallet: Click the "Please connect your Metamask wallet" button to connect your Metamask wallet to the application. You will be prompted to authorize the connection.
+1. Connect Metamask Wallet: Click the "Please connect Metamask wallet" button to connect your Metamask wallet to the application. You will be prompted to authorize the connection.
 
 2. Account Information: Once connected, you will see your account address and current balance displayed on the screen.
 
